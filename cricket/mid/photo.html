@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Photo Gallery | XYZ Industries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+        <header>
+            <h1>XYZ industries</h1>
+        </header>
+    
+        <nav>
+            <div class="navbar">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Register.html">Register</a></li>
+                    <li><a href="Support.html">Support</a></li>
+                    <li>
+                        <form action="/search-results.html" method="get" onsubmit="searchSite(); return false;">
+                            <div class="search">
+                                <input class="search-input" id="search-input" type="search" name="q" placeholder="Search our site" required aria-label="Search" />
+                                <button type="submit">Search</button>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+        <ul id="search-results" class="search-results"></ul>
+      
+        <section class="photo">
+            <h2>This is the photo gallery where fans/user can see previous match photos and achievements </h2>
+              
+        </section>
+    
+       
+    <div class="gallery">
+        <a target="_blank" href="photo/download 2.jpeg">
+            <img src="photo/download 2.jpeg" alt="match 3/4/24">
+        </a>
+        <div class="description">Salads</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="photo/download 3.jpeg">
+            <img src="photo/download 3.jpeg" alt="5/4/24- u18 regionals qualifiers">
+        </a>
+        <div class="description">Soups</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="photo/download 4.jpeg">
+            <img src="photo/download 4.jpeg" alt="7/4/24- u18 regionals qualifiers">
+        </a>
+        <div class="description">Pizzas</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="photo/download5.jpeg">
+            <img src="photo/download5.jpeg" alt="9/4/24- u18 regionals qualifiers">
+        </a>
+        <div class="description">Pizzas</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="photo/win1.jpg">
+            <img src="photo/win1.jpg" alt="11/4/24- u18 regionals qualifiers winners">
+        </a>
+        <div class="description">Pizzas</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="photo/win2.jpg">
+            <img src="photo/win2.jpg" alt="11/4/24- u18 regionals qualifiers winners">
+        </a>
+        <div class="description">Pizzas</div>
+    </div>
+
+
+
+    <footer>
+        <p>&copy; 2024 Cricket Feeds. All rights reserved.</p>
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+    </footer>
+
+    <script>
+        // List of searchable pages
+        const pages = [
+            { title: "Home", url: "Home.html" },
+            { title: "About Cricket Feeds", url: "about.html" },
+            { title: "Cricket Match Highlights", url: "highlights.html" },
+            { title: "Cricket Player Statistics", url: "statistics.html" },
+            { title: "Register for Cricket Updates", url: "Registration.html" },
+            { title: "Contact Support", url: "Support.html" }
+        ];
+
+        // Function to search the site
+        function searchSite() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            if (query) {
+                const filteredPages = pages.filter(page => page.title.toLowerCase().includes(query));
+
+                if (filteredPages.length) {
+                    filteredPages.forEach(page => {
+                        const resultItem = document.createElement('li');
+                        const resultLink = document.createElement('a');
+                        resultLink.href = page.url;
+                        resultLink.textContent = page.title;
+
+                        resultItem.appendChild(resultLink);
+                        resultsContainer.appendChild(resultItem);
+                    });
+                } else {
+                    resultsContainer.innerHTML = '<li>No results found</li>';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
